@@ -176,6 +176,16 @@ VITE_API_URL=http://localhost:4567
 
 > CVC: cualquier 3 dígitos | Fecha: cualquier fecha futura
 
+## 🔒 Seguridad y Buenas Prácticas
+
+El frontend cumple con las siguientes buenas prácticas de seguridad y OWASP:
+
+- ✅ **HTTPS**: Servido por CloudFront, toda comunicación con el backend está cifrada.
+- ✅ **CORS**: Solo se permite comunicación con el backend en Railway a través de orígenes autorizados.
+- ✅ **Cabeceras de seguridad (Security Headers)**: CloudFront permite configurar cabeceras para proteger contra inyecciones y ataques de contenido.
+- ✅ **Validación de datos**: Formularios de checkout validan entradas del usuario antes de enviar al backend.
+- ✅ **Principios OWASP**: Aplicación SPA construida siguiendo buenas prácticas de seguridad (no se almacenan datos sensibles, se maneja la tokenización de tarjetas).}
+
 ## 🚀 Despliegue
 
 ```bash
