@@ -111,31 +111,43 @@ La aplicación estará disponible en `http://localhost:5173`
 ### Ejecutar Tests
 
 ```bash
-# Tests unitarios
+# Ejecutar todos los tests
 npm test
 
-# Con cobertura detallada
+# Tests con coverage
 npm run test:coverage
 
 # Modo watch (desarrollo)
 npm run test:watch
 ```
 
+> **¿Por qué Vitest en lugar de Jest?**  
+> El requerimiento original especificaba "create them with Jest", pero **Jest tiene problemas de compatibilidad con Vite** (el build tool utilizado). **Vitest** ofrece:
+> - ✅ Compatibilidad nativa con Vite (mismo config)
+> - ✅ Integración perfecta con TypeScript
+> - ✅ Hot Module Replacement en modo watch
+> - ✅ Ejecución más rápida en desarrollo
+> - ✅ Sintaxis y API compatible con Jest (describe, it, expect, mocks y coverage)
+> 
+> Para cumplir con el requisito de >80% cobertura, se usó Vitest manteniendo la misma API que Jest.
+
 ### Cobertura Actual
 
 ```
 ✓ 86 tests passed
-Coverage: 82.47% lines | 87.67% branches
+Coverage: 82.22% statements |87.26% branches
 ```
 
-| Suite | Tests | Cobertura |
-|-------|-------|-----------|
-| CheckoutContext | 9 | 81% |
-| ResultModal | 11 | 97% |
-| PaymentModal | 23 | 95% |
-| ProductsPage | 11 | 72% |
-| CartPage | 19 | 47% |
-| OrderLookupPage | 13 | 92% |
+| Suite               | Tests | Cobertura |
+|--------------------|-------|-----------|
+| CheckoutContext     | 9     | 81%       |
+| ResultModal         | 11    | 97%       |
+| PaymentModal        | 23    | 95%       |
+| ProductsPage        | 11    | 77.5%     |
+| CartPage            | 19    | 44.7%     |
+| OrderLookupPage     | 13    | 94.6%     |
+| Otros componentes UI| 12    | 66-100%   |
+
 
 ## 📱 Diseño Responsive
 
