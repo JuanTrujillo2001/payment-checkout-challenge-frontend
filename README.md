@@ -173,4 +173,22 @@ npm run build
 # Los archivos se generan en dist/
 ```
 
-Compatible con cualquier hosting estático (Netlify, Vercel, S3+CloudFront, etc.)
+Compatible con cualquier hosting estático (Vercel, S3+CloudFront, etc.)
+
+## 🚀 Despliegue en AWS S3 + CloudFront
+
+```bash
+# Build de producción
+npm run build
+
+# Subir a S3
+aws s3 sync dist/ s3://tu-bucket --delete
+
+# Invalidar caché de CloudFront
+aws cloudfront create-invalidation --distribution-id TU-DISTRIBUTION-ID --paths "/*"
+```
+
+Configuración recomendada:
+- **S3**: Static website hosting con index.html
+- **CloudFront**: Redirección 404 a /index.html (para SPA routing)
+- **CI/CD**: GitHub Actions para deploy automático
