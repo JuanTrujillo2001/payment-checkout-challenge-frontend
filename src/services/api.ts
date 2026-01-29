@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { Product, Customer, Delivery, CardData, Transaction, Cart } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://payment-checkout-challenge-production.up.railway.app';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4567';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
